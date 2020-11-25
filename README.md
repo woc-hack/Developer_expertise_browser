@@ -6,13 +6,12 @@ We want to build a developer expertise browser based on WoC and an awesome proje
 ## Team Members
 - Kai Gao (PKU, GMT+8)
 - Jianyu Wu (PKU, GMT+8)
-- Hao He (PKU, GMT+8)
 - Haiqiao Gu (THU, GMT+8)
 
 ## Team Plan
 We want to characterize developer's expertise from the following factors:
 
-<img src="/Users/kaigao/Desktop/Developer_expertise_browser/img/chart1.png" alt="chart" style="zoom:50%;" />
+<img src="img/chart1.png" alt="chart" style="zoom:50%;" />
 
 1. Code capabilities
     - Development history
