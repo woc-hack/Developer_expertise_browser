@@ -1,54 +1,84 @@
 <template>
   <div id="app">
-    <!-- type='flex' 启动flex布局-->
-    <!-- center:居中，start左对齐，end右对齐， -->
-    <el-col :span="10"></el-col>
-    <el-row id="project-head" type="flex" justify="center" class="bg-white">
-      <el-col :span="8">
-        <div class="el-icon-share"></div>
-        OSSLAB/ Developer Expertise Browser
-      </el-col> 
-    </el-row>
-    <profiling-container></profiling-container>
+    <div id="nav">
+      <b-navbar toggleable="lg" type="dark" variant="info" fixed="top" class="header">
+        <b-navbar-brand to="/">DeveloperExpertiseBrowser</b-navbar-brand>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item to="/search">Search</b-nav-item>
+            <b-nav-item to="/dataset">Dataset</b-nav-item>
+            <b-nav-item to="/about">About</b-nav-item>
+          </b-navbar-nav>
+          <!-- <b-navbar-nav class="ml-auto">
+            <library-search-input size="sm" button-text="Search" placeholder="Search a Java library..."/>
+          </b-navbar-nav> -->
+        </b-collapse>
+      </b-navbar>
+    </div>
+    <div id="center-page">
+      <router-view />
+    </div>
+    <div id="app-footer">
+      <hr class="my-4" />
+      © Copyright 2020
+      <b-link href="https://osslab-pku.github.io/" target="_blank">OSSLab</b-link>,  Peking University <br />
+      Special Thanks to:
+      <b-link href="http://worldofcode.org/" target="_blank">World of Code</b-link> led by
+      <b-link href="https://mockus.org/" target="_blank">Prof. Audris Mockus</b-link> <br />
+      All source code and data available under the
+      <b-link href="http://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank"
+        >GPL-v3 License</b-link
+      >.
+    </div>
   </div>
 </template>
 
 <script>
-import ProfilingContainer from "./components/ProfilingContainer.vue";
+// import LibrarySearchInput from "@/components/LibrarySearchInput.vue";
 
 export default {
   name: "App",
-  components: {
-    ProfilingContainer,
-  },
-  data() {
-    return {
-      activeIndex: "1",
-    };
-  },
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
-
-  },
+  // components: { LibrarySearchInput },
+  data: () => ({
+    fromLib: "",
+  }),
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: /*Avenir,*/ Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-#project-head {
-  margin-bottom: 20px;
-  font-size: 28px;
+
+#nav {
+  padding: 30px;
 }
-.bg-white {
-  background: #ffffff;
+
+#nav a {
+  font-weight: bold;
+  /*color: #2c3e50;*/
+}
+
+/*
+#nav a.router-link-exact-active {
+  color: #42b983;
+}*/
+
+#center-page {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+#app-footer {
+  text-align: center;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 30px;
 }
 </style>

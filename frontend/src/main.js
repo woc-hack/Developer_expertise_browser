@@ -1,9 +1,22 @@
-import { createApp } from 'vue'
-import ElementPlus from 'element-plus';
-import 'element-plus/lib/theme-chalk/index.css';
+import Vue from 'vue'
 import App from './App.vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import ECharts from 'vue-echarts'
+import 'echarts/'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import store from './store'
+// import router from './router'
 
-const app = createApp(App)
-app.use(ElementPlus)
-app.mount('#app')
+Vue.config.productionTip = false
+
+Vue.use(BootstrapVue) // Install BootstrapVue
+Vue.use(IconsPlugin) // Optionally install the BootstrapVue icon components plugin
+Vue.component('v-chart', ECharts)
+
+new Vue({
+  // store,
+  // router,
+  render: h => h(App)
+}).$mount('#app')

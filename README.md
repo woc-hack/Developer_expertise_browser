@@ -6,7 +6,6 @@ We want to build a developer expertise browser based on WoC and an awesome proje
 ## Team Members
 - Kai Gao (PKU, GMT+8)
 - Jianyu Wu (PKU, GMT+8)
-- Hao He (PKU, GMT+8)
 - Haiqiao Gu (THU, GMT+8)
 
 ## Team Plan
